@@ -1,0 +1,4 @@
+cron:
+- description: Biar Ga Error
+  url: /cron
+  schedule: every 2 minutes
