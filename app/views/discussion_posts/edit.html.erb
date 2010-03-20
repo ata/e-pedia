@@ -1,0 +1,12 @@
+<h1>Editing discussion_post</h1>
+
+<% form_for(@discussion_post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @discussion_post %> |
+<%= link_to 'Back', discussion_posts_path %>

@@ -1,0 +1,18 @@
+<h1>Listing discussion_posts</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @discussion_posts.each do |discussion_post| %>
+  <tr>
+    <td><%= link_to 'Show', discussion_post %></td>
+    <td><%= link_to 'Edit', edit_discussion_post_path(discussion_post) %></td>
+    <td><%= link_to 'Destroy', discussion_post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New discussion_post', new_discussion_post_path %>
