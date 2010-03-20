@@ -5,7 +5,7 @@ class User
   property :login,    String,        :required => true, :length => 500
   property :password, String,        :required => true, :length => 500
   property :email,    String,        :required => true, :length => 500
-  #property :group_id, Integer,       :required => true
+  property :group_id, Integer,       :required => true
   timestamps :at 
   
   belongs_to :group, 'UserGroup'

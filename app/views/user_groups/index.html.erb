@@ -2,11 +2,13 @@
 
 <table>
   <tr>
+    <th>Code</th>
     <th>Name</th>
   </tr>
 
 <% @user_groups.each do |user_group| %>
   <tr>
+    <td><%=h user_group.code %></td>
     <td><%=h user_group.name %></td>
     <td><%= link_to 'Show', user_group %></td>
     <td><%= link_to 'Edit', edit_user_group_path(user_group) %></td>
