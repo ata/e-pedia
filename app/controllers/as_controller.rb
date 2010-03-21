@@ -1,3 +1,0 @@
-class AsController < ApplicationController
-
-end

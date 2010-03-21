@@ -1,40 +1,36 @@
-<div class="nav">
-  <span class="menuButton"><a class="home" href="/"></a></span>
-  <span class="menuButton"><%= link_to 'New discussion', new_discussion_path,:class=> 'create' %></span>
-</div>
-<div class="body span-24">
+
+<div class="span-24">
   <h2>Listing discussions</h2>
   <% if flash[:notice] %>
     <div class="message"><%= flash[:notice] %></div>
   <% end %>
-  <div class="list">
-    <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Title</th>
-          <th>Content</th>
-          <th>User</th>
-          <th>Thread</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <% @discussions.each_with_index do |discussion,i| %>
-      <tr class="<%=(i%2)==0?'even':'odd'%>">
-        <td><%=h i + 1 %></td>
-        <td><%=h discussion.title %></td>
-        <td><%=h discussion.content %></td>
-        <td><%=h discussion.user.nickname %></td>
-        <td><%=h discussion.thread.title %></td>
-        <td>
-          <%= link_to 'Show', discussion %>
-          <%= link_to 'Edit', edit_discussion_path(discussion) %>
-          <%= link_to 'Destroy', discussion, :confirm => 'Are you sure?', :method => :delete %>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+  <div class="buttons">
+    <span class="button"><%=link_to 'New Discussion',new_discussion_path,:class=>'create'%></span>
   </div>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>User</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% @discussions.each_with_index do |discussion,i| %>
+    <tr class="<%=(i%2)==0?'even':'odd'%>">
+      <td><%=h i + 1 %></td>
+      <td><%=h discussion.title %></td>
+      <td><%=h discussion.content %></td>
+      <td><%=h discussion.user.nickname %></td>
+      <td>
+        <%= link_to 'Show', discussion, :class=>'action_show' %>
+        <%= link_to 'Edit', edit_discussion_path(discussion),:class=>'action_edit' %>
+        <%= link_to 'Destroy', discussion, :class=>'action_destroy',:confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
   <div class="paginateButtons">
     
   </div>
