@@ -2,18 +2,18 @@
 
 <table>
   <tr>
-    <th>Login</th>
-    <th>Password</th>
+    <th>Nickname</th>
     <th>Email</th>
-    <th>Group</th>
+    <th>Complete</th>
+    <th>Full name</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.login %></td>
-    <td><%=h user.password %></td>
+    <td><%=h user.nickname %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.group %></td>
+    <td><%=h user.complete %></td>
+    <td><%=h user.full_name %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -25,7 +25,6 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
-    @groups = UserGroup.all.map{|g| [g.name,g.id]}
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,49 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :user_groups
-
-  map.resources :user_groups
-
-  map.resources :users
-
-  map.resources :roles
-
-  map.resources :roles
-
-  map.resources :roles
-
-  map.resources :settings
-
-  map.resources :roles
-
-  map.resources :discussion_posts
-
   map.resources :discussions
 
-  map.resources :course_items
-
-  map.resources :courses
+  map.resources :users
 
   map.resources :users
 
-  map.resources :user_groups
-
-  map.resources :roles
-
-  map.resources :course_items
-
-  map.resources :roles
-
-  map.resources :user_groups
+  map.resources :users
 
   map.resources :users
 
-  map.resources :settings
-
-  map.resources :settings
-
-  map.resources :settings
-
-  map.resources :settings
+  map.resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -25,7 +25,8 @@ class DiscussionsController < ApplicationController
   # GET /discussions/new.xml
   def new
     @discussion = Discussion.new
-
+    @users = User.all.map{|u| [u.nickname, u.id] }
+    @threads = Discussion.all.map{|t| [t.title, t.id] }
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @discussion }
@@ -35,6 +36,8 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1/edit
   def edit
     @discussion = Discussion.find(params[:id])
+    @users = User.all.map{|u| [u.nickname, u.id] }
+    @threads = Discussion.all.map{|t| [t.title, t.id] }
   end
 
   # POST /discussions
